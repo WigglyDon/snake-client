@@ -7,8 +7,12 @@ const connect = function () {
   });
   conn.setEncoding("utf8");
   conn.on("connect", () => {
-    console.log("Connecting ...");
+    console.log("Connected to server");
+    conn.write("Name: LOL");
   });
+//----------------------------------------
+
+
   conn.on("data", (data) => {
     console.log(data);
   });
